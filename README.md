@@ -2,6 +2,9 @@
 Flask-Python Microservice using Bootstrap
 
 ## run containers
+Create a Docker Network to jointly test the containers
+
+    docker network create cesar_net
 
 Backend container (Dockerfile / Docker-hub):
 
