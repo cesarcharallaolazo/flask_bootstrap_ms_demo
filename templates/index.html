@@ -1,0 +1,71 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}UNSA-CNBD-Microservice{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="line-height:122px; height:90px;">
+                <img src="{{url_for('static', filename='logo_unsa.png')}}" width="160" height="47"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <a class="navbar-brand" href="#" style="line-height:122px; height:90px;">
+                    <img src="{{url_for('static', filename='logo_kubernetes.png')}}" width="80" height="60"/>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: #090909;
+        color: #fff;
+    }
+</style>
+
+<form class="form-horizontal" method="POST" action="/py/eval"
+      name="KubernetesMsDemo" id="KubernetesMsDemoForm"
+      role="form">
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Sumando 1:</label>
+        <p style="color:#000000"><input type="text" name="sumando_1" value="{{sumando1}}"/></p>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Sumando 2:</label>
+        <p style="color:#000000"><input type="text" name="sumando_2" value="{{sumando2}}"/></p>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Suma:</label>
+        <div class="col-sm-7">
+            <p style="color:#33FF46"><label class="control-label col-sm-1">{{calc_suma}}</label></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Sumar</button>
+        </div>
+    </div>
+
+</form>
+
+
+{% endblock %}
+
+    
+    
+
