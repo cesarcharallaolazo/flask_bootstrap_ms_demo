@@ -4,6 +4,6 @@ COPY requirements.txt /
 RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . /app
 WORKDIR /app
-EXPOSE 8000
-ENTRYPOINT ["gunicorn", "-b", "0.0.0.0:8000", "--access-logfile", "-", "--error-logfile", "-", "--timeout", "120"]
+EXPOSE 7777
+ENTRYPOINT ["gunicorn", "-b", "0.0.0.0:7777", "--access-logfile", "-", "--error-logfile", "-", "--timeout", "120"]
 CMD ["app_backend:app"]
